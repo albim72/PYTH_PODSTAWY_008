@@ -51,5 +51,53 @@ usuniety = studenci.pop(3)
 print(studenci)
 print(usuniety)
 
+#iteracja po liście
+for ind,var in enumerate(studenci): #enumerate zwraca parę (indeks,wartośc)
+    print(f"Indeks {ind+1} - {var}") #f-string - ekstrapolacja tekstu
+
+#łączenie list
+nowi = ["Hubert","Iza"]
+studenci.extend(nowi)
+print(studenci)
+
+kolejni = ["Justyna","Ula","ula"]
+studenci = studenci + kolejni
+print(studenci)
+
+#list comprehension
+print("____ list comprehension _____")
+kwadraty = [x**2 for x in range(1,13)]
+print(kwadraty)
+
+oceny_pow_3 = [o for o in oceny if o>3]
+print(oceny_pow_3)
+
+#sortowanie elementów
+print("______SORTOWANIE______")
+print(f"studenci alfabetycznie:{sorted(studenci)}")
+print(f"studenci sortowani odwrotnie: {sorted(studenci,reverse=True)}")
+
+#listy złożone
+
+print("______listy wielowymiarowe______")
+tabela = [
+    ["Ala",5],
+    ["Olaf",3],
+    ["Karol",4],
+    ["Maria",5],
+    ["Ela",3]
+]
+
+for imie,ocena in tabela:
+    print(f"{imie} ma ocenę {ocena}")
+
+print("____funkcje ageregujące na listach____")
+print(f"ocena najwyższa: {max(oceny)}")
+print(f"ocena najniższa: {min(oceny)}")
+print(f"srednia oceny: {sum(oceny)/len(oceny)}")
+print(f"odchylenie standardowe: {stdev(oceny)}")
+
+
+
 
 
