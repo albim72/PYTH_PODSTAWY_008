@@ -19,3 +19,41 @@ class Prostokat:
 
 p = Prostokat(5,3)
 print(f"pole prostokąta to: {p.pole()}")
+
+#dziedziczenie
+
+class Zwierze:
+    def __init__(self,imie):
+        self.imie=imie
+
+    def dzwiek(self):
+        return "???"
+
+class Pies(Zwierze):
+    def __init__(self,imie,rasa):
+        super().__init__(imie)
+        self.rasa=rasa
+
+    def dzwiek(self):
+        return "Hau!"
+
+
+class Kot(Zwierze):
+    def __init__(self, imie, umaszczenie):
+        super().__init__(imie)
+        self.umaszczenie=umaszczenie
+
+    def dzwiek(self):
+        return "Miau!"
+
+pies = Pies("Ludvik", "Bulfog Angielski")
+print(f"dzwiek psa to: {pies.dzwiek()}")
+
+kot = Kot("Ator","rude")
+print(f"dzwiek kota to: {kot.dzwiek()}")
+
+pies = Pies("Roman", "Owczarek Belgijski")
+print(f"dzwiek psa to: {pies.dzwiek()}")
+
+
+
