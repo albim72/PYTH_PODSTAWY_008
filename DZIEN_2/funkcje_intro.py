@@ -23,6 +23,17 @@ def powitanie_uzytkownika(imie,jezyk="PL"):
     else:
         print(f"[{jezyk}] Nieobsługiwany język. Cześc {imie}!")
 
+#funkcja zwracająca wiele wartości
+def dzielenie(a,b):
+    """
+    zwraca (iloraz całkowity,reszta) dla liczb całkowitych a i b
+    :param a: int
+    :param b: int
+    :return: divmod(a,b)
+    """
+    if b==0:
+        raise ZeroDivisionError("Nie dziel przez zero!")
+    return divmod(a,b)
 #przykładowe użuycia funkcji
 if __name__ == '__main__':
     print("_____ funkcja - powitanie_____")
@@ -38,3 +49,6 @@ if __name__ == '__main__':
     powitanie_uzytkownika('Marek', 'EN')
     print(f"powitanie_uzytkownika('Marek', 'DE') ->")
     powitanie_uzytkownika('Marek', 'DE')
+    print("_____ funkcja - dzielenie_____")
+    iloraz,reszta = dzielenie(17,5)
+    print(f"dzielenie(17,5) -> iloraz: {iloraz} ,reszta: {reszta}")
