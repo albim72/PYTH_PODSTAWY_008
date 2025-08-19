@@ -34,7 +34,14 @@ def dzielenie(a,b):
     if b==0:
         raise ZeroDivisionError("Nie dziel przez zero!")
     return divmod(a,b)
-#przykładowe użuycia funkcji
+
+#funkcja z listą jako argumentem
+def srednia(lista):
+    if not lista:
+        raise ValueError("lista pusta! Nie można policzyc średniej!")
+    return sum(lista)/len(lista)
+
+#przykładowe użycia funkcji
 if __name__ == '__main__':
     print("_____ funkcja - powitanie_____")
     powitanie()
@@ -52,3 +59,12 @@ if __name__ == '__main__':
     print("_____ funkcja - dzielenie_____")
     iloraz,reszta = dzielenie(17,5)
     print(f"dzielenie(17,5) -> iloraz: {iloraz} ,reszta: {reszta}")
+    print("_____ funkcja - srednia_____")
+    try:
+        print(f"srednia([1,2,3,4,5]) = {srednia([1,2,3,4,5]):.2f}")
+        print(f"srednia([3.5,6.7,8.8,4.12,56,7.8]) = {srednia([3.5,6.7,8.8,4.12,56,7.8]):.2f}")
+        print(f"srednia([]) = {srednia([]):.2f}")
+    except ValueError as e:
+        print(f"ValueError: {e}")
+    except ZeroDivisionError as e:
+        print(f"ZeroDivisionError: {e}")
