@@ -41,6 +41,9 @@ def srednia(lista):
         raise ValueError("lista pusta! Nie można policzyc średniej!")
     return sum(lista)/len(lista)
 
+#funkcja anonimowa
+szescian = lambda x: x**3 + 2*x**2 - 10*x + 1
+
 #przykładowe użycia funkcji
 if __name__ == '__main__':
     print("_____ funkcja - powitanie_____")
@@ -67,4 +70,8 @@ if __name__ == '__main__':
     except ValueError as e:
         print(f"ValueError: {e}")
     except ZeroDivisionError as e:
-        print(f"ZeroDivisionError: {e}")
+        print(f"ZeroDivisionError: {e}")\
+
+    print("_____ funkcja - lambda_____")
+    print(f"szescian(8) = {szescian(8)}")
+    print(f"szescian(0) = {szescian(0)}")
