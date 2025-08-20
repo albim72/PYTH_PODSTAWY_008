@@ -5,6 +5,7 @@ import math
 from dane import liczby, leader, MC as m, kolor
 # from dane import *
 from mfunkcje.kwadraty import kwadrat,parzyste,slownik
+from mojpakiet import Osoba
 
 print(liczby)
 print("_"*50)
@@ -29,6 +30,10 @@ print(lb is liczby)
 print(f"kwadrat(lb) = {kwadrat(lb)}")
 print(f"parzyste(lb) = {parzyste(lb)}")
 print(f"slownik(leader) = {slownik(leader)}")
+
+print("_"*50)
+jan = Osoba("Jan", "Kowalski")
+jan.przedstaw_sie()
 
 
 
