@@ -8,3 +8,4 @@ leader = {
 }
 
 MC = "wrzesień"
+kolor = "czerwony"
