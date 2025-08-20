@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 class Zwierze(ABC):
     def __init__(self,name):
         self._name = name
-        self.createnew_animal(self._name)
+        print(self.createnew_animal(self._name))
 
     @abstractmethod
     def daj_glos(self):
@@ -37,6 +37,16 @@ class Kot(Zwierze):
     def liczba_nog(self):
         return super().liczba_nog()
 
+class Pajak(Zwierze):
+    def __init__(self,name):
+        super().__init__(name)
+
+    def daj_glos(self):
+        return "Sssss..."
+
+    def liczba_nog(self):
+        return 8
+
 
 print("_______ Pies _________")
 p = Pies("Ludvik")
@@ -49,6 +59,12 @@ k = Kot("Filemon")
 print(k)
 print(k.daj_glos())
 print(k.liczba_nog())
+
+print("_______ Pająk _________")
+pj = Pajak("Franio")
+print(pj)
+print(pj.daj_glos())
+print(pj.liczba_nog())
 
 
 
