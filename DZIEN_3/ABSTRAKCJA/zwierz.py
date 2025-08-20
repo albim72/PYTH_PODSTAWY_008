@@ -27,12 +27,29 @@ class Pies(Zwierze):
     def liczba_nog(self):
         return super().liczba_nog()
 
+class Kot(Zwierze):
+    def __init__(self,name):
+        super().__init__(name)
+
+    def daj_glos(self):
+        return "Miau!Miau!"
+
+    def liczba_nog(self):
+        return super().liczba_nog()
+
 
 print("_______ Pies _________")
 p = Pies("Ludvik")
 print(p)
 print(p.daj_glos())
 print(p.liczba_nog())
+
+print("_______ Kot _________")
+k = Kot("Filemon")
+print(k)
+print(k.daj_glos())
+print(k.liczba_nog())
+
 
 
 
