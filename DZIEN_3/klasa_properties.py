@@ -18,9 +18,33 @@ class KontoBankowe:
         if kwota < 0:
             raise ValueError("Saldo nie może byc ujemne!")
         self._saldo = kwota
-        
+
     @saldo.deleter
     def saldo(self):
         """deleter - usnięcie salda (wyzerowania) """
         print("saldo zostało wyzerowane!")
         self._saldo = 0.0
+        # del self._saldo
+
+
+#użycie properites
+
+k = KontoBankowe("Jakub",5000)
+print(k.wlasciciel)
+print(k.saldo)
+
+#nowa kwota saldo
+k.saldo = 10000
+print(k.saldo)
+
+try:
+    k.saldo = -1000
+except ValueError as e:
+    print(e)
+
+#użycie deletera
+del k.saldo
+print(k.saldo)
+
+# del k
+# print(k)
