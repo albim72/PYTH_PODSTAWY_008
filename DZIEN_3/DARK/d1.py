@@ -16,9 +16,20 @@ class Zwierze:
         else:
             raise ValueError("nieznany gatunek")
 
+#bezzpieczna alternatywa
+def make_zwierze(gatunek):
+    if gatunek == "pies":
+        return Pies()
+    if gatunek == "kot":
+        return Kot()
+    raise ValueError("nieznany gatunek")
+
 z = Zwierze("pies")
 print(z, z.glos())   # <Pies> hau
 
 # Ten sam konstruktor może stworzyć „to samo” jako inny typ:
 w = Zwierze("kot")
 print(w, w.glos())   # <Kot> miau
+
+p = make_zwierze("pies")
+print(p, p.glos())
