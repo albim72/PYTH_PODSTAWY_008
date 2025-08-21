@@ -28,3 +28,16 @@ class RunLog:
                 line = f"{r.date} | {r.distance_km:.1f}km | {r.duration_min}min | {pace}min/km\n"
                 f.write(line)
             f.write(f"SUMA: {self.total_distance():.1f}km\n")
+
+def main():
+    log = RunLog()
+    log.add_run(RunRecord("2025-08-11",10, 47))
+    log.add_run(RunRecord("2025-08-12",12, 58))
+    log.add_run(RunRecord("2025-08-17",5, 24))
+    log.add_run(RunRecord("2025-08-19",36, 233))
+
+    log.export_txt("runs.txt")
+    print(f"Razem: {log.total_distance():.2f} km")
+
+if __name__ == '__main__':
+    main()
